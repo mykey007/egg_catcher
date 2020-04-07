@@ -7,12 +7,12 @@ canvas_height = 800
 
 root = Tk()
 c = Canvas(root, width=canvas_width, height=canvas_height, background='deep sky blue')
-c.create_rectangle(-5, canvas_height - 100, canvas_width + 5, canvas_height + 5, fill='sea green', width=0)
+c.create_rectangle(-5, canvas_height - 100, canvas_width + 5, canvas_height + 5, fill='green2', width=0)
 
-c.create_oval(-80, -80, 120, 120, fill='orange', width=0)
+c.create_oval(-80, -80, 120, 120, fill='yellow', width=0)
 c.pack()
 
-color_cycle = cycle(['light blue','light green','light pink','light yellow','light cyan'])
+color_cycle = cycle(['red','gold2','green','gray23','forest green'])
 egg_width = 45
 egg_height = 55
 egg_score = 10
@@ -20,7 +20,7 @@ egg_speed = 500
 egg_interval = 4000
 difficulty_factor = 0.95
 
-catcher_color = 'blue'
+catcher_color = 'orange'
 catcher_width = 100
 catcher_height = 100
 catcher_start_x = canvas_width / 2 - catcher_width / 2
@@ -89,12 +89,12 @@ def increase_score(points):
 def move_right(event):
     (x1, y1, x2, y2) = c.coords(catcher)
     if x2 < canvas_width:
-        c.move(catcher, 20, 0)
+        c.move(catcher, 40, 0)
 
 def move_left(event):
     (x1, y1, x2, y2) = c.coords(catcher)
     if x1 > 0:
-        c.move(catcher, -20, 0)
+        c.move(catcher, -40, 0)
 
 c.bind('<Left>', move_left)
 c.bind('<Right>', move_right)
